@@ -6,6 +6,7 @@ services:
     container_name: php
     volumes:
     - /c/Users/cc:/home/worker/data/www/ibos-qyy-group/ibosapi
+    - /c/Users/qyyadmin:/home/worker/data/www/ibos-qyy-group/qyyadmin
     - ./php/php-fpm.ini:/home/worker/php/etc/php-fpm.ini
     - ./php/php-fpm.conf:/home/worker/php/etc/php-fpm.conf
     - ./php/php.d/xdebug.ini:/home/worker/php/etc/php.d/xdebug.ini
@@ -20,12 +21,12 @@ services:
       - redis
       - mysql
     extra_hosts:
-      - "wqdapi.cc:192.168.99.100"
-      - "ld.cc:192.168.99.100"
-      - "ibosapi.cc:192.168.99.100"
-      - "open.qunyingyong.net:192.168.99.100"
-      - "wp.cc:192.168.99.100"
-      - "qyyadmin.cc:192.168.99.100"
+      - "wqdapi.cc:192.168.1.54"
+      - "ld.cc:192.168.1.54"
+      - "ibosapi.cc:192.168.1.54"
+      - "open.qunyingyong.net:192.168.1.54"
+      - "wp.cc:192.168.1.54"
+      - "qyyadmin.cc:192.168.1.54"
   redis:
     restart: always
     image:  registry.cn-hangzhou.aliyuncs.com/qyyteam/redis:1.0.0
